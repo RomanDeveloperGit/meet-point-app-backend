@@ -21,10 +21,10 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Check TS and Linter errors
+      - name: Check TS and ESLint errors
         run: |
-          yarn lint
-          yarn type-check
+          yarn ts:check
+          yarn lint:check
       - name: Commit the release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
