@@ -1,5 +1,8 @@
 name: Update release version
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
