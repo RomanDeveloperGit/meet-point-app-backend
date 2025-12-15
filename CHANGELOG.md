@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.0.0...v1.1.0) (2025-12-15)
+
+
+### Features
+
+* **modules:** init prisma and config modules ([701b5c6](https://github.com/RomanDeveloperGit/meet-point-app-backend/commit/701b5c64599e250c9bd9ee4238feee70b72de897))
+
 # 1.0.0 (2025-12-07)
 
 
