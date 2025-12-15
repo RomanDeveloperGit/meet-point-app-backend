@@ -1,7 +1,8 @@
 export interface Config {
-  databaseUrl: string;
-
+  port: number;
   hasDocs: boolean;
+
+  databaseUrl: string;
 
   passwordHashSalt: number;
 

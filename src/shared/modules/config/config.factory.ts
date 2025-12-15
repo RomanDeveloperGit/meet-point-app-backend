@@ -1,4 +1,4 @@
-import { Config } from './config.entity';
+import { Config } from './config.types';
 
 type ConfigFactory = () => Config;
 
@@ -6,9 +6,10 @@ type ConfigFactory = () => Config;
 
 export const configFactory: ConfigFactory = () => {
   return {
-    databaseUrl: String(process.env.DATABASE_URL),
-
+    port: Number(process.env.PORT),
     hasDocs: Boolean(process.env.HAS_DOCS),
+
+    databaseUrl: String(process.env.DATABASE_URL),
 
     passwordHashSalt: Number(process.env.PASSWORD_HASH_SALT),
 

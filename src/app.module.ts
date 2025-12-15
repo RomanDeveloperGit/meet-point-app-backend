@@ -1,8 +1,8 @@
 import { ClassSerializerInterceptor, Module, ValidationPipe } from '@nestjs/common';
 import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
-import { ConfigModule } from '@/shared/config';
-import { PrismaModule } from '@/shared/prisma';
+import { ConfigModule } from '@/shared/modules/config';
+import { PrismaModule } from '@/shared/modules/prisma';
 
 @Module({
   imports: [ConfigModule, PrismaModule],

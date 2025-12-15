@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as cookieParser from 'cookie-parser';
 
-import { ConfigService } from '@/shared/config';
+import { ConfigService } from '@/shared/modules/config';
 
 import { AppModule } from './app.module';
 
@@ -30,7 +30,7 @@ async function bootstrap() {
     SwaggerModule.setup('docs', app, swaggerDocument);
   }
 
-  await app.listen(8000);
+  await app.listen(configService.get('port'));
 }
 
 bootstrap();
