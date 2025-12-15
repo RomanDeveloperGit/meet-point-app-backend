@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { compare, hash } from 'bcrypt';
 
 import { ConfigService } from '@/shared/modules/config';

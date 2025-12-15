@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PassportStrategy } from '@nestjs/passport';
 import { Request } from 'express';
+
+import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 
 import { REFRESH_TOKEN_STRATEGY_NAME } from '@/shared/libs/auth';

@@ -1,8 +1,10 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 
+import { JwtService } from '@nestjs/jwt';
+
 import { UserService } from '@/modules/user/user.service';
+
 import { AUTH_ERROR, REFRESH_TOKEN_COOKIE_PATH } from '@/shared/libs/auth';
 import { ConfigService } from '@/shared/modules/config';
 import { User } from '@/shared/modules/generated/prisma/client';
