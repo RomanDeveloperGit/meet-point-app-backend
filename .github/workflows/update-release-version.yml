@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: "20.19.6"
           cache: yarn
+      - name: Create .env.development file
+        run: |
+          echo "DATABASE_URL=http://mock.mock" > .env.development
       - name: Install dependencies
         run: |
           yarn install --frozen-lockfile
