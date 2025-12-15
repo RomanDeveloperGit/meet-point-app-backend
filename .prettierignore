@@ -6,5 +6,7 @@
 dist
 node_modules
 
+src/generated
+
 .eslintrc.js
 commitlint.config.js
