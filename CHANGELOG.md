@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.1.0...v1.2.0) (2025-12-15)
+
+
+### Features
+
+* add user and auth services ([590819d](https://github.com/RomanDeveloperGit/meet-point-app-backend/commit/590819d768cc4e9d32bcc4997b2bbbba0baea214))
+
 # [1.1.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.0.0...v1.1.0) (2025-12-15)
 
 
