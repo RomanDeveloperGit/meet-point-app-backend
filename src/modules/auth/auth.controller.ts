@@ -4,10 +4,9 @@ import { Response } from 'express';
 
 import { AccessTokenGuard } from './access-token/access-token.guard';
 import { AuthService } from './auth.service';
-
+import { SignInRequest } from './dto/sign-in.dto';
 import { SignUpRequest } from './dto/sign-up.dto';
 import { RefreshTokenGuard } from './refresh-token/refresh-token.guard';
-import { SignInRequest } from './dto/sign-in.dto';
 
 @ApiTags('Auth')
 @Controller('auth')

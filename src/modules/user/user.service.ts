@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common';
-
 import { compare, hash } from 'bcrypt';
 
+import { ConfigService } from '@/shared/modules/config';
 import { User } from '@/shared/modules/generated/prisma/client';
+import { PrismaService } from '@/shared/modules/prisma';
 
 import { CreateUserRequest } from './dto/create-user.dto';
 import { GetUserByEmailAndPasswordRequest } from './dto/get-user-by-email-and-password';
-import { PrismaService } from '@/shared/modules/prisma';
-import { ConfigService } from '@/shared/modules/config';
 
 @Injectable()
 export class UserService {

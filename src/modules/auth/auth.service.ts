@@ -1,18 +1,16 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 
-import { JwtService } from '@nestjs/jwt';
-
+import { UserService } from '@/modules/user/user.service';
+import { AUTH_ERROR, REFRESH_TOKEN_COOKIE_PATH } from '@/shared/libs/auth';
+import { ConfigService } from '@/shared/modules/config';
 import { User } from '@/shared/modules/generated/prisma/client';
 
-import { ConfigService } from '@/shared/modules/config';
-import { UserService } from '@/modules/user/user.service';
-
 import { AuthorizedUser } from './dto/authorized-user.dto';
-import { SignInRequest, SignInResponse } from './dto/sign-in.dto';
 import { RefreshResponse } from './dto/refresh.dto';
+import { SignInRequest, SignInResponse } from './dto/sign-in.dto';
 import { SignUpRequest, SignUpResponse } from './dto/sign-up.dto';
-import { AUTH_ERROR, REFRESH_TOKEN_COOKIE_PATH } from '@/shared/libs/auth';
 
 @Injectable()
 export class AuthService {

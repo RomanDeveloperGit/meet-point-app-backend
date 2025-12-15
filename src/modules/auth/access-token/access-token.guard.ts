@@ -1,7 +1,7 @@
 import { applyDecorators, Injectable, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
-import { AuthGuard } from '@nestjs/passport';
 import { ACCESS_TOKEN_STRATEGY_NAME } from '@/shared/libs/auth';
 
 @Injectable()
