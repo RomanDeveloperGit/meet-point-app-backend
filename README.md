@@ -4,6 +4,15 @@ An application for organizing meetings anywhere
 Main Stack: TS, Nest, PostgreSQL, Prisma
 
 
+## Installation
+  - ```git clone https://github.com/RomanDeveloperGit/meet-point-app-backend.git```
+
+  - Create an `.env.development`/`.env.production` file with variables (you can see the full list of variables in src/shared/modules/config/config.factory.ts) 
+  
+  - ```yarn setup```
+
+
+
 ## [From Nest README]
 
 <p align="center">
