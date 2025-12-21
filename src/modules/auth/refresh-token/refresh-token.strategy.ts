@@ -18,10 +18,7 @@ export class RefreshTokenStrategy extends PassportStrategy(Strategy, REFRESH_TOK
     });
   }
 
-  async validate(
-    req: Request,
-    payload: RefreshTokenFullPayload,
-  ): Promise<RefreshTokenFullPayload | false> {
+  async validate(req: Request, payload: RefreshTokenPayload): Promise<RefreshTokenPayload | false> {
     return payload;
   }
 }

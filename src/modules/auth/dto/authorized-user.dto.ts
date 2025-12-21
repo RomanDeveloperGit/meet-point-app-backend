@@ -5,7 +5,7 @@ import { Exclude, Expose } from 'class-transformer';
 import { Role, User } from '@/shared/modules/generated/prisma/client';
 
 export class AuthorizedUser implements User {
-  @Expose()
+  @Exclude()
   id: number;
 
   @Expose()

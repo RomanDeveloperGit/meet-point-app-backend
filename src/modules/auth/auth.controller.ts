@@ -2,11 +2,11 @@ import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 
-import { AccessTokenGuard } from './access-token/access-token.guard';
+import { DecoratedAccessTokenGuard } from './access-token/access-token.guard';
 import { AuthService } from './auth.service';
 import { SignInRequest } from './dto/sign-in.dto';
 import { SignUpRequest } from './dto/sign-up.dto';
-import { RefreshTokenGuard } from './refresh-token/refresh-token.guard';
+import { DecoratedRefreshTokenGuard } from './refresh-token/refresh-token.guard';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -33,17 +33,17 @@ export class AuthController {
     summary: 'The Refresh Token is stored in browser cookies',
   })
   @Post('refresh')
-  @RefreshTokenGuard()
+  @DecoratedRefreshTokenGuard()
   async refresh(
-    @Req() request: RequestWithRefreshTokenFullPayload,
+    @Req() request: RequestWithRefreshTokenPayload,
     @Res({ passthrough: true }) response: Response,
   ) {
     return this.authService.refresh(response, request.user);
   }
 
   @Get('access-token/check')
-  @AccessTokenGuard()
-  async checkAccessToken(@Req() request: RequestWithAccessTokenFullPayload) {
+  @DecoratedAccessTokenGuard()
+  async checkAccessToken(@Req() request: RequestWithAccessTokenPayload) {
     return this.authService.checkAccessToken(request.user);
   }
 
@@ -51,9 +51,9 @@ export class AuthController {
     summary: 'The Refresh Token is deleted from browser cookies',
   })
   @Post('sign-out')
-  @AccessTokenGuard()
+  @DecoratedAccessTokenGuard()
   async signOut(
-    @Req() request: RequestWithAccessTokenFullPayload,
+    @Req() request: RequestWithAccessTokenPayload,
     @Res({ passthrough: true }) response: Response,
   ) {
     await this.authService.signOut(response, request.user);

@@ -18,7 +18,5 @@ export const configFactory: ConfigFactory = () => {
 
     jwtRefreshSecret: String(process.env.JWT_REFRESH_SECRET),
     jwtRefreshExpiresIn: Number(process.env.JWT_REFRESH_EXPIRES_IN),
-
-    refreshTokenCookieKey: 'refresh-token',
   };
 };

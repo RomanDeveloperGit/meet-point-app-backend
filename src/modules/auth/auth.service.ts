@@ -5,7 +5,11 @@ import { JwtService } from '@nestjs/jwt';
 
 import { UserService } from '@/modules/user/user.service';
 
-import { AUTH_ERROR, REFRESH_TOKEN_COOKIE_PATH } from '@/shared/libs/auth';
+import {
+  AUTH_ERROR,
+  REFRESH_TOKEN_COOKIE_NAME,
+  REFRESH_TOKEN_COOKIE_PATH,
+} from '@/shared/libs/auth';
 import { ConfigService } from '@/shared/modules/config';
 import { User } from '@/shared/modules/generated/prisma/client';
 
@@ -56,7 +60,7 @@ export class AuthService {
   private saveRefreshTokenCookie(response: Response, refreshToken: string) {
     const maxAge = this.configService.get('jwtRefreshExpiresIn') * 1000;
 
-    response.cookie(this.configService.get('refreshTokenCookieKey'), refreshToken, {
+    response.cookie(REFRESH_TOKEN_COOKIE_NAME, refreshToken, {
       maxAge,
       httpOnly: true,
       path: REFRESH_TOKEN_COOKIE_PATH,
@@ -65,7 +69,7 @@ export class AuthService {
   }
 
   private clearRefreshTokenCookie(response: Response) {
-    response.clearCookie(this.configService.get('refreshTokenCookieKey'), {
+    response.clearCookie(REFRESH_TOKEN_COOKIE_NAME, {
       path: REFRESH_TOKEN_COOKIE_PATH,
     });
   }
@@ -113,9 +117,9 @@ export class AuthService {
 
   async refresh(
     response: Response,
-    refreshTokenFullPayload: RefreshTokenFullPayload,
+    refreshTokenPayload: RefreshTokenPayload,
   ): Promise<RefreshResponse> {
-    const user = await this.userService.getUserByEmail(refreshTokenFullPayload.email);
+    const user = await this.userService.getUserByEmail(refreshTokenPayload.email);
 
     if (!user) {
       throw new BadRequestException({
@@ -133,8 +137,8 @@ export class AuthService {
     };
   }
 
-  async checkAccessToken(accessTokenFullPayload: AccessTokenFullPayload): Promise<AuthorizedUser> {
-    const user = await this.userService.getUserByEmail(accessTokenFullPayload.email);
+  async checkAccessToken(accessTokenPayload: AccessTokenPayload): Promise<AuthorizedUser> {
+    const user = await this.userService.getUserByEmail(accessTokenPayload.email);
 
     if (!user) {
       throw new BadRequestException({
@@ -146,8 +150,8 @@ export class AuthService {
     return new AuthorizedUser(user);
   }
 
-  async signOut(response: Response, accessTokenFullPayload: AccessTokenFullPayload): Promise<void> {
-    const user = await this.userService.getUserByEmail(accessTokenFullPayload.email);
+  async signOut(response: Response, accessTokenPayload: AccessTokenPayload): Promise<void> {
+    const user = await this.userService.getUserByEmail(accessTokenPayload.email);
 
     if (!user) {
       throw new BadRequestException({

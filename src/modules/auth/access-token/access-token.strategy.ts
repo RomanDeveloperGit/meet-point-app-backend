@@ -16,7 +16,7 @@ export class AccessTokenStrategy extends PassportStrategy(Strategy, ACCESS_TOKEN
     });
   }
 
-  async validate(payload: AccessTokenFullPayload): Promise<AccessTokenFullPayload> {
+  async validate(payload: AccessTokenPayload): Promise<AccessTokenPayload> {
     return payload;
   }
 }

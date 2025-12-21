@@ -11,6 +11,4 @@ export interface Config {
 
   jwtRefreshSecret: string;
   jwtRefreshExpiresIn: number; // only in seconds
-
-  refreshTokenCookieKey: string;
 }

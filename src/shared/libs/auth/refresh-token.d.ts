@@ -3,13 +3,11 @@ import { Request } from 'express';
 import { JwtPayload } from 'jsonwebtoken';
 
 declare global {
-  interface RefreshTokenPayload {
+  interface RefreshTokenPayload extends JwtPayload {
     email: string;
   }
 
-  interface RefreshTokenFullPayload extends JwtPayload, RefreshTokenPayload {}
-
-  interface RequestWithRefreshTokenFullPayload extends Request {
-    user: RefreshTokenFullPayload;
+  interface RequestWithRefreshTokenPayload extends Request {
+    user: RefreshTokenPayload;
   }
 }

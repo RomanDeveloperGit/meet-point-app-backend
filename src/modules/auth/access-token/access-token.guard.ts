@@ -6,8 +6,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { ACCESS_TOKEN_STRATEGY_NAME } from '@/shared/libs/auth';
 
 @Injectable()
-class BasicAccessTokenGuard extends AuthGuard(ACCESS_TOKEN_STRATEGY_NAME) {}
+export class RawAccessTokenGuard extends AuthGuard(ACCESS_TOKEN_STRATEGY_NAME) {}
 
-export function AccessTokenGuard() {
-  return applyDecorators(ApiBearerAuth(), UseGuards(BasicAccessTokenGuard));
+export function DecoratedAccessTokenGuard() {
+  return applyDecorators(ApiBearerAuth(), UseGuards(RawAccessTokenGuard));
 }
