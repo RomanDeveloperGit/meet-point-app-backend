@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.2.0...v1.3.0) (2025-12-21)
+
+
+### Features
+
+* **verification:** add module ([9d875f7](https://github.com/RomanDeveloperGit/meet-point-app-backend/commit/9d875f7e22f3a63e51fedc6a9c76db73c83d2014))
+
 # [1.2.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.1.0...v1.2.0) (2025-12-15)
 
 
