@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "setup": "yarn && prisma generate",
+    "nest:module": "nest g resource --no-spec",
     "ts:check": "tsc --noEmit",
     "lint:check": "eslint \"{src,apps,libs}/**/*.ts\"",
     "lint:fix": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
@@ -21,8 +22,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "build": "cross-env NODE_ENV=production nest build",
-    "start:prod": "cross-env NODE_ENV=production node dist/src/main",
-    "start:migrate:prod": "yarn migrate:deploy && yarn start:prod"
+    "start:prod": "cross-env NODE_ENV=production node dist/src/main"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
