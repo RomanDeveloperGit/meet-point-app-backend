@@ -14,7 +14,7 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @ApiOperation({
-    summary: 'The Refresh Token is stored in browser cookies',
+    summary: 'The Refresh Token will be stored in browser cookies',
   })
   @Post('sign-in')
   async signIn(@Body() data: SignInRequest, @Res({ passthrough: true }) response: Response) {
@@ -22,7 +22,7 @@ export class AuthController {
   }
 
   @ApiOperation({
-    summary: 'The Refresh Token is stored in browser cookies',
+    summary: 'The Refresh Token will be stored in browser cookies',
   })
   @Post('sign-up')
   async signUp(@Body() data: SignUpRequest, @Res({ passthrough: true }) response: Response) {
@@ -30,7 +30,7 @@ export class AuthController {
   }
 
   @ApiOperation({
-    summary: 'The Refresh Token is stored in browser cookies',
+    summary: 'The Refresh Token will be stored in browser cookies',
   })
   @Post('refresh')
   @DecoratedRefreshTokenGuard()
@@ -48,7 +48,7 @@ export class AuthController {
   }
 
   @ApiOperation({
-    summary: 'The Refresh Token is deleted from browser cookies',
+    summary: 'The Refresh Token will be removed from browser cookies',
   })
   @Post('sign-out')
   @DecoratedAccessTokenGuard()
