@@ -6,6 +6,7 @@ import { Role, User } from '@/shared/modules/generated/prisma/client';
 
 export class AuthorizedUser implements User {
   @Exclude()
+  @ApiHideProperty()
   id: number;
 
   @Expose()
