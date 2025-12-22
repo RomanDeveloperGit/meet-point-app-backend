@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.3.0...v1.3.1) (2025-12-22)
+
+
+### Bug Fixes
+
+* **authorized-user:** hide id property for more security ([a62acf8](https://github.com/RomanDeveloperGit/meet-point-app-backend/commit/a62acf86aac2140139b09aa4d85e78bc15432eec))
+
 # [1.3.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.2.0...v1.3.0) (2025-12-21)
 
 
