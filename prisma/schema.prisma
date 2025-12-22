@@ -9,6 +9,13 @@ generator client {
   output   = "../src/shared/modules/generated/prisma"
 }
 
+generator openapi {
+  provider    = "prisma-openapi"
+  title       = "Meet Point"
+  description = "Prisma entities docs"
+  output      = "../src/shared/modules/generated/prisma-docs"
+}
+
 datasource db {
   provider = "postgresql"
 }
