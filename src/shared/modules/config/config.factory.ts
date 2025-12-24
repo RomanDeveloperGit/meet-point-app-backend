@@ -2,12 +2,10 @@ import { Config } from './config.types';
 
 type ConfigFactory = () => Config;
 
-// TODO: to add the validation
-
 export const configFactory: ConfigFactory = () => {
   return {
     port: Number(process.env.PORT),
-    hasDocs: Boolean(process.env.HAS_DOCS),
+    hasDocs: process.env.HAS_DOCS === 'true',
 
     databaseUrl: String(process.env.DATABASE_URL),
 
