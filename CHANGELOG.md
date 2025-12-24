@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.3.1...v1.4.0) (2025-12-24)
+
+
+### Features
+
+* **config:** add validation ([2a949d7](https://github.com/RomanDeveloperGit/meet-point-app-backend/commit/2a949d76a4ade80f998f4db2080a7062edfe3517))
+
 ## [1.3.1](https://github.com/RomanDeveloperGit/meet-point-app-backend/compare/v1.3.0...v1.3.1) (2025-12-22)
 
 
